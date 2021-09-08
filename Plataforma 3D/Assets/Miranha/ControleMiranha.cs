@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class ControleMiranha : MonoBehaviour
 {
@@ -15,6 +16,12 @@ public class ControleMiranha : MonoBehaviour
 
     SpringJoint teia;
 
+    [Header("IK")]
+    public Transform alvoMaoDireita;
+    public Transform alvoMaoEsquerda;
+    Transform ultimoAlvoDireita, ultimoAlvoEsquerda;
+    bool bracoDireito = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +32,20 @@ public class ControleMiranha : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Arrastar a mão do player para o alvo
+        //Comentado pois vamos fazer de forma suave quando apertar espaço
+        /*if(ultimoAlvoDireita != null)
+        {
+            alvoMaoDireita.position = ultimoAlvoDireita.position;
+        }
+        if (ultimoAlvoEsquerda != null)
+        {
+            alvoMaoEsquerda.position = ultimoAlvoEsquerda.position;
+        }*/
+
+
+
+
         float movimentoVertical = Input.GetAxis("Vertical");
         float movimentoHorizontal = Input.GetAxis("Horizontal");
 
@@ -80,6 +101,20 @@ public class ControleMiranha : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space) && alvo != null)
         {
             teia.connectedBody = alvo.GetComponent<Rigidbody>();
+            if (bracoDireito)
+            {
+                ultimoAlvoDireita = alvo;
+                bracoDireito = false;
+                alvoMaoDireita.DOMove(alvo.position, 0.5f);
+            }
+            else
+            {
+                ultimoAlvoEsquerda = alvo;
+                bracoDireito = true;
+                alvoMaoEsquerda.DOMove(alvo.position, 0.5f);
+            }
+            transform.DOLookAt(alvo.position, 1, AxisConstraint.Y);
+            GetComponentInChildren<Animator>().SetTrigger("Teia");
         }
 
     }
