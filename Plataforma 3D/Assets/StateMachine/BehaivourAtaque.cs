@@ -3,31 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class BehaviourHunt : StateMachineBehaviour
+public class BehaivourAtaque : StateMachineBehaviour
 {
     PontosPatrulha pontosPatrulha;
     NavMeshAgent agente;
-
-    public float distanciaParaAtaque = 1;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         pontosPatrulha = animator.GetComponent<PontosPatrulha>();
         agente = animator.GetComponent<NavMeshAgent>();
+        pontosPatrulha.Atacar();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        agente.SetDestination(pontosPatrulha.player.position);
-
-        float distancia = Vector3.Distance(animator.transform.position,
-            pontosPatrulha.player.position);
-        if(distancia <= distanciaParaAtaque)
-        {
-            animator.SetTrigger("Ataque");
-        }
+        agente.SetDestination(animator.transform.position);
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

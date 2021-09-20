@@ -143,6 +143,12 @@ MonoBehaviour:
   pontos:
   - {fileID: 848570036}
   - {fileID: 1956352872}
+  player: {fileID: 1053113453}
+  angulo: 104.88
+  distancia: 4.2
+  layerDoPlayer:
+    serializedVersion: 2
+    m_Bits: 16
 --- !u!195 &52744593
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -242,7 +248,7 @@ GameObject:
   - component: {fileID: 564141238}
   - component: {fileID: 564141237}
   - component: {fileID: 564141236}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -432,7 +438,7 @@ GameObject:
   - component: {fileID: 828537947}
   - component: {fileID: 828537946}
   - component: {fileID: 828537945}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Sphere (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -650,7 +656,7 @@ GameObject:
   - component: {fileID: 1053113452}
   - component: {fileID: 1053113451}
   - component: {fileID: 1053113450}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}

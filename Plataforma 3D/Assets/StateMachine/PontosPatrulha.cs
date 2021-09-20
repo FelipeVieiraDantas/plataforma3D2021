@@ -58,4 +58,17 @@ public class PontosPatrulha : MonoBehaviour
             anim.SetBool("Vendo O Player", false);
         }
     }
+
+    public void Atacar()
+    {
+        Invoke("DarDano", 0.2f);
+    }
+
+    void DarDano()
+    {
+        if(anim.GetBool("Vendo O Player"))
+        {
+            player.GetComponent<HPDoPlayer>().TomouPorrada(1);
+        }
+    }
 }
