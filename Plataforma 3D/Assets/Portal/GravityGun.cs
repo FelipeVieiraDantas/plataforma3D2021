@@ -34,8 +34,8 @@ public class GravityGun : MonoBehaviour
                 if (rigid)
                 {
                     estouClicando = rigid.GetComponent<Renderer>();
-                    materialOriginal = estouClicando.material;
-                    estouClicando.material = materialBrilhante;
+                    materialOriginal = estouClicando.sharedMaterial;
+                    estouClicando.sharedMaterial = materialBrilhante;
                     rigid.useGravity = false;
                     offset = rigid.transform.position - posicaoNoMundo;
                 }
@@ -45,7 +45,7 @@ public class GravityGun : MonoBehaviour
         if(Input.GetMouseButtonUp(0) && estouClicando != null)
         {
             estouClicando.GetComponent<Rigidbody>().useGravity = true;
-            estouClicando.material = materialOriginal;
+            estouClicando.sharedMaterial = materialOriginal;
             estouClicando = null;
         }
 
