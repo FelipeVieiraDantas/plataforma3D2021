@@ -23,7 +23,7 @@ public class GravityGun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             Vector3 posicaoNoMundo = Camera.main.ScreenToWorldPoint(mira.position);
             RaycastHit caraQueEuBati;
@@ -42,7 +42,7 @@ public class GravityGun : MonoBehaviour
             }
         }
 
-        if(Input.GetMouseButtonUp(0) && estouClicando != null)
+        if(Input.GetKeyUp(KeyCode.E) && estouClicando != null)
         {
             estouClicando.GetComponent<Rigidbody>().useGravity = true;
             estouClicando.sharedMaterial = materialOriginal;

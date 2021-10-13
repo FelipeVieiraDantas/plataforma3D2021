@@ -10,7 +10,7 @@ public class Puzzle : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.tag == "Finish")
+        if(collision.collider.tag == "Finish" && materialQueEuMudei == null)
         {
             //Terminou o puzzle
             Renderer r = collision.collider.GetComponent<Renderer>();
@@ -23,6 +23,9 @@ public class Puzzle : MonoBehaviour
     }
     private void OnDisable()
     {
-        materialQueEuMudei.color = corOriginal;
+        if (materialQueEuMudei != null)
+        {
+            materialQueEuMudei.color = corOriginal;
+        }
     }
 }
