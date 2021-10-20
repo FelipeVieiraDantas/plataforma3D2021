@@ -263,6 +263,8 @@ GameObject:
   - component: {fileID: 321039071}
   - component: {fileID: 321039070}
   - component: {fileID: 321039069}
+  - component: {fileID: 321039073}
+  - component: {fileID: 321039072}
   m_Layer: 0
   m_Name: Portal (1)
   m_TagString: Untagged
@@ -335,6 +337,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: -92.176, z: 0}
+--- !u!114 &321039072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321039068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96c8dcea3ff87ae448c08ff2e38ef4a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outroPortal: {fileID: 482711043}
+  tempoSemFuncionar: 1
+--- !u!65 &321039073
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321039068}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000002, y: 1, z: 1.0000004}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &355838728
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,6 +613,8 @@ GameObject:
   - component: {fileID: 482711042}
   - component: {fileID: 482711041}
   - component: {fileID: 482711040}
+  - component: {fileID: 482711044}
+  - component: {fileID: 482711043}
   m_Layer: 0
   m_Name: Portal
   m_TagString: Untagged
@@ -656,6 +687,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: -5.466, z: 0}
+--- !u!114 &482711043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482711039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96c8dcea3ff87ae448c08ff2e38ef4a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outroPortal: {fileID: 321039072}
+  tempoSemFuncionar: 1
+--- !u!65 &482711044
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482711039}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9999999, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &522234376
 GameObject:
   m_ObjectHideFlags: 0
@@ -1676,6 +1734,7 @@ GameObject:
   - component: {fileID: 1478619527}
   - component: {fileID: 1478619526}
   - component: {fileID: 1478619530}
+  - component: {fileID: 1478619531}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Finish
@@ -1754,7 +1813,7 @@ Transform:
   m_GameObject: {fileID: 1478619525}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.19, y: 2.82, z: 3.77}
-  m_LocalScale: {x: 2.2383, y: 2.2383, z: 2.2383}
+  m_LocalScale: {x: 0.6051084, y: 0.6051084, z: 0.6051084}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -1775,6 +1834,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1478619531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478619525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 789ae428ac41796488f2ec9be4990612, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clone: {fileID: 0}
+  portal1: {fileID: 0}
+  portal2: {fileID: 0}
 --- !u!1 &1644557903
 GameObject:
   m_ObjectHideFlags: 0
@@ -2369,6 +2443,7 @@ GameObject:
   - component: {fileID: 2051138928}
   - component: {fileID: 2051138927}
   - component: {fileID: 2051138929}
+  - component: {fileID: 2051138930}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2515,3 +2590,18 @@ MonoBehaviour:
   - {fileID: 482711039}
   - {fileID: 321039068}
   mira: {fileID: 522234377}
+--- !u!114 &2051138930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051138921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 789ae428ac41796488f2ec9be4990612, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clone: {fileID: 0}
+  portal1: {fileID: 0}
+  portal2: {fileID: 0}
